@@ -1,4 +1,4 @@
-/** @type {import('./__types/[id]').RequestHandler} */
+/** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get({ request, platform }) {
   // `params.id` comes from [id].js
   const item = platform.env.WT.get("one");
