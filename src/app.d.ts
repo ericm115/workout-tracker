@@ -6,7 +6,13 @@
 declare namespace App {
   // interface Locals {}
   interface Platform {
-    env: { WT: KVNamespace };
+    env: {
+      KVNamespace: "af1a2ece4c6f4b74ad152bed2f145fba";
+    };
+    context: {
+      waitUntil(promise: Promise<any>): void;
+    };
+    caches: CacheStorage & { default: Cache };
   }
   // interface Session {}
   // interface Stuff {}
