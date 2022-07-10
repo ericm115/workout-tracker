@@ -1,5 +1,5 @@
 /// <reference types="@sveltejs/kit" />
-
+// You need to put in the KV information as astandard. Line 10 example
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 // and what to do when importing types

@@ -1,5 +1,6 @@
 <script>
     // populated with data from the endpoint  
+    // bellow is how you get the data fromt he endpoint
     export let item;
     console.log(item)
     console.log(JSON.stringify(item))
