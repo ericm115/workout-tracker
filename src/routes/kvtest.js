@@ -1,5 +1,3 @@
-import db from "$lib/database";
-
 /** @type {import('./__types/[id]').RequestHandler} */
 export async function get({ request, platform }) {
   // `params.id` comes from [id].js
