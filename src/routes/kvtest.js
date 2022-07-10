@@ -1,7 +1,7 @@
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get({ request, platform }) {
   // `params.id` comes from [id].js
-  const item = await platform.env.KVNamespace.get("one").json();
+  const item = await platform.env.KVNamespace.get("one");
 
   if (item) {
     return {

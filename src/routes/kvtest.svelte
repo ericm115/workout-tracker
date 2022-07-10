@@ -6,7 +6,7 @@
   </script>
   
   <h1>KV Test</h1>
-  {#each item as i}
+  {#each JSON.parse(item) as i}
     <p>Name: {i.name}</p>
     <p>Phone: {i.phone}</p>
     <p>Address: {i.address}</p>
