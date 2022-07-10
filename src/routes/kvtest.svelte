@@ -3,4 +3,4 @@
     export let item;
   </script>
   
-  <h1>{item.title}</h1>
+  <h1>{item}</h1>
