@@ -18,7 +18,7 @@ export async function get({ request, platform }) {
   };
 }
 
-export async function post(req, platform) {
+export async function post({ req, platform }) {
   let { name, phone, address, preData } = await req.body;
   preData = JSON.parse(preData);
   preData.push({ name: name, phone: phone, address: address });
