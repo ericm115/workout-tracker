@@ -3,6 +3,7 @@ import { blank_object } from "svelte/internal";
 
 
 export let item;
+export let thing;
 let name;
 let phone;
 let address;
@@ -15,8 +16,10 @@ function handleSubmit() {
       body: JSON.stringify({ name: name, phone: phone, address: address, preData: item }),
       headers: { 'content-type': 'application/json' },
     })
-      .then((resp) => data = resp.json())
+      .then((resp) => resp.json())
       .finally(() => setTimeout(() => (submit = null), 5000))
+
+      data = thing;
   }
 </script>
 <form on:submit|preventDefault={handleSubmit}>
