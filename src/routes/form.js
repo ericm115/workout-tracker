@@ -19,7 +19,7 @@ export async function get({ request, platform }) {
 }
 
 export async function post(req, platform) {
-  const { name, phone, address, preData } = req.body;
+  let { name, phone, address, preData } = req.body;
   preData = JSON.parse(preData);
   preData.push({ name: name, phone: phone, address: address });
   preData = JSON.stringify(preData);
