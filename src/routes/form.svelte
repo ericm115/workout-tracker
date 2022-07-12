@@ -6,9 +6,16 @@ export let item;
 let name;
 let phone;
 let address;
-const handleSubmit = () => {
-    console.log(name,phone,address)
-}
+function handleSubmit() {
+    // Send a POST request to src/routes/contact.js endpoint
+    submit = fetch('/form', {
+      method: 'POST',
+      body: JSON.stringify({ name: name, phone: phone, address: address, preData: item }),
+      headers: { 'content-type': 'application/json' },
+    })
+      .then((resp) => resp.json())
+      .finally(() => setTimeout(() => (submit = null), 5000))
+  }
 </script>
 <form on:submit|preventDefault={handleSubmit}>
 <input type="text" placeholder="name" bind:value={name}>
@@ -17,7 +24,7 @@ const handleSubmit = () => {
 <button>Submit</button>
 </form>
 
-{#each item as i}
+{#each JSON.parse(item) as i}
 <div class="my-4">
 <p>Name: {i.name}</p>
 <p>Phone: {i.phone}</p>
