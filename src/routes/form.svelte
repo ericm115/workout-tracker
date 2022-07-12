@@ -6,6 +6,8 @@ export let item;
 let name;
 let phone;
 let address;
+
+var data = item;
 function handleSubmit() {
     // Send a POST request to src/routes/contact.js endpoint
     submit = fetch('/form', {
@@ -13,9 +15,8 @@ function handleSubmit() {
       body: JSON.stringify({ name: name, phone: phone, address: address, preData: item }),
       headers: { 'content-type': 'application/json' },
     })
-      .then((resp) => resp.json())
+      .then((resp) => data = resp.json())
       .finally(() => setTimeout(() => (submit = null), 5000))
-      item = item
   }
 </script>
 <form on:submit|preventDefault={handleSubmit}>
@@ -25,7 +26,7 @@ function handleSubmit() {
 <button>Submit</button>
 </form>
 
-{#each JSON.parse(item) as i}
+{#each JSON.parse(data) as i}
 <div class="my-4">
 <p>Name: {i.name}</p>
 <p>Phone: {i.phone}</p>
