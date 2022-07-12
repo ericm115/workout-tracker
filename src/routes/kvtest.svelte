@@ -2,8 +2,6 @@
     // populated with data from the endpoint  
     // bellow is how you get the data fromt he endpoint
     export let item;
-    console.log(item)
-    console.log(JSON.stringify(item))
   </script>
   
   <h1>KV Test</h1>
