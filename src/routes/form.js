@@ -8,6 +8,23 @@ export async function get({ request, platform }) {
   if (item) {
     return {
       status: 200,
+      headers: { "Content-Type": "application/json" },
+      body: { item },
+    };
+  }
+
+  return {
+    status: 404,
+  };
+}
+
+export async function post(req, platform) {
+  const item = await platform.env.KVNamespace.put("one");
+
+  // Simulate a delay... instead you'd do something interesting here...
+  if (item) {
+    return {
+      status: 200,
       headers: {},
       body: { item },
     };

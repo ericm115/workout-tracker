@@ -17,8 +17,8 @@ const handleSubmit = () => {
 <button>Submit</button>
 </form>
 
-{#each JSON.parse(item) as i}
-<div>
+{#each item as i}
+<div class="my-4">
 <p>Name: {i.name}</p>
 <p>Phone: {i.phone}</p>
 <p>Address: {i.address}</p>
