@@ -17,7 +17,7 @@ function handleSubmit() {
       .finally(() => setTimeout(() => (submit = null), 5000))
   }
 </script>
-<form on:submit={handleSubmit}>
+<form on:submit|preventDefault={handleSubmit}>
 <input type="text" placeholder="name" bind:value={name}>
 <input type="text" placeholder="belt color" bind:value={phone}>
 <input type="number" placeholder="age" bind:value="{address}">
