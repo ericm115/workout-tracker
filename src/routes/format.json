@@ -1,0 +1,34 @@
+{
+  "sections": [
+    {
+      "displayname": "Candidate Information",
+      "fields": [
+        "Candidate Name",
+        "Phone",
+        "Mailing Address",
+        "Status",
+        "Interview Score",
+        "Recruiter Notes"
+      ]
+    },
+    {
+      "displayname": "Recruitment",
+      "fields": [
+        "State/ WFB",
+        "Referral Source",
+        "Notified Funder",
+        "Location",
+        "Funder",
+        "Case Manager Assigned",
+        "Student ID",
+        "Invoiced",
+        "Laptop?",
+        "Welcome Packet"
+      ]
+    },
+    {
+      "displayname": "Application",
+      "fields": ["Status"]
+    }
+  ]
+}
