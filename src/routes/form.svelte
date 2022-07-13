@@ -15,9 +15,8 @@ function handleSubmit() {
       headers: { 'content-type': 'application/json' },
     })
       .then((resp) => resp.json())
-      .finally(() => setTimeout(() => (submit = null), 5000))
+      .finally(() => data = response)
 
-      data = response;
   }
 </script>
 <form on:submit|preventDefault={handleSubmit}>
