@@ -16,7 +16,6 @@ function handleSubmit() {
       .then((resp) => resp.json())
       .finally()
 
-      data = JSON.stringify({ name: name, phone: phone, address: address, preData: item })
   }
 </script>
 <form on:submit|preventDefault={handleSubmit}>
