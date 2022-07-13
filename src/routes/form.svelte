@@ -1,14 +1,12 @@
 <script>
-import { blank_object } from "svelte/internal";
-
-
+  import RenderForm from "../components/renderForm.svelte"
 export let item;
 export let response;
 let name;
 let phone;
 let address;
 
-var data = item;
+$: data = item;
 function handleSubmit() {
     // Send a POST request to src/routes/contact.js endpoint
     submit = fetch('/form', {
@@ -29,10 +27,5 @@ function handleSubmit() {
 <button>Submit</button>
 </form>
 
-{#each JSON.parse(data) as i}
-<div class="my-4">
-<p>Name: {i.name}</p>
-<p>Phone: {i.phone}</p>
-<p>Address: {i.address}</p>
-</div>
-{/each}
+<RenderForm data={data} />  
+
