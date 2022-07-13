@@ -1,7 +1,6 @@
 <script>
   import RenderForm from "../components/renderForm.svelte"
 export let item;
-export let response;
 let name;
 let phone;
 let address;
@@ -15,8 +14,9 @@ function handleSubmit() {
       headers: { 'content-type': 'application/json' },
     })
       .then((resp) => resp.json())
-      .finally(() => data = response)
+      .finally()
 
+      data = JSON.stringify({ name: name, phone: phone, address: address, preData: item })
   }
 </script>
 <form on:submit|preventDefault={handleSubmit}>
