@@ -8,3 +8,4 @@
 <p>Phone: {i.phone}</p>
 <p>Address: {i.address}</p>
 </div>
+{/each}
