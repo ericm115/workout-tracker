@@ -58,7 +58,7 @@ export async function get({ request, platform }) {
 export async function post({ request, platform }) {
   let { name, phone, address, preData } = await request.json();
   preData.push({ name: name, phone: phone, address: address });
-  item = preData;
+  const item = preData;
   if (item) {
     return {
       status: 200,

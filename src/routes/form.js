@@ -22,7 +22,7 @@ export async function post({ request, platform }) {
   let { name, phone, address, preData } = await request.json();
   preData = JSON.parse(preData);
   preData.push({ name: name, phone: phone, address: address });
-  item = preData;
+  const item = preData;
   await platform.env.KVNamespace.put("one", JSON.stringify(preData));
   // Simulate a delay... instead you'd do something interesting here...
   if (item) {
