@@ -6,17 +6,23 @@ let phone;
 let address;
 
 $: data = item;
-function handleSubmit() {
-    // Send a POST request to src/routes/contact.js endpoint
-    submit = fetch('/form', {
-      method: 'POST',
-      body: JSON.stringify({ name: name, phone: phone, address: address, preData: item }),
-      headers: { 'content-type': 'application/json' },
-    })
-      .then((resp) => resp.json())
-      .finally()
+async function handleSubmit() {
+      // Send a POST request to src/routes/local.js endpoint
+      let submit = await fetch('/local', {
+        method: 'POST',
+        body: JSON.stringify({ name: name, phone: phone, address: address, preData: data }),
+        headers: new Headers({
+		"Accept": "application/json",
+		"Content-Type": "application/json"
+	}),
+      });
+      let resp = await submit.json();
 
-  }
+      console.log(resp)
+      data = resp.item;
+        
+  
+    }
 </script>
 <form on:submit|preventDefault={handleSubmit}>
 <input type="text" placeholder="name" bind:value={name}>
