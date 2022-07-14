@@ -3,7 +3,7 @@
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get({ request, platform }) {
   // `params.id` comes from [id].js
-  const item = await platform.env.KVNamespace.get("one");
+  let item = await platform.env.KVNamespace.get("one");
   item = JSON.parse(item);
   if (item) {
     return {
@@ -23,7 +23,7 @@ export async function post({ request, platform }) {
   preData = preData;
   preData.push({ name: name, phone: phone, address: address });
   preData = JSON.stringify(preData);
-  const item = await platform.env.KVNamespace.put("one", preData);
+  let item = await platform.env.KVNamespace.put("one", preData);
   // Simulate a delay... instead you'd do something interesting here...
   if (item) {
     return {
