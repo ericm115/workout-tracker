@@ -8,7 +8,7 @@ let address;
 $: data = item;
 async function handleSubmit() {
       // Send a POST request to src/routes/local.js endpoint
-      let submit = await fetch('/local', {
+      let submit = await fetch('/form', {
         method: 'POST',
         body: JSON.stringify({ name: name, phone: phone, address: address, preData: data }),
         headers: new Headers({
