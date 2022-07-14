@@ -18,7 +18,6 @@ async function handleSubmit() {
     });
     let resp = await submit.json();
 
-    console.log(resp)
     data = resp.item;
       
 
