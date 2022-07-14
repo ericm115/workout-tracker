@@ -4,7 +4,7 @@
 export async function get({ request, platform }) {
   // `params.id` comes from [id].js
   const item = await platform.env.KVNamespace.get("one");
-
+  item = JSON.parse(item);
   if (item) {
     return {
       status: 200,
