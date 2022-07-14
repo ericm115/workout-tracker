@@ -22,12 +22,15 @@ export async function post({ request, platform }) {
   let { name, phone, address, preData } = await request.json();
   preData.push({ name: name, phone: phone, address: address });
   const item = preData;
-  const upload = await platform.env.KVNamespace.put("one", preData);
-  if (upload) {
+  const upload = await platform.env.KVNamespace.put(
+    "one",
+    JSON.stringify(preData)
+  );
+  if (item) {
     return {
       status: 200,
       headers: { "Content-Type": "application/json" },
-      body: { item },
+      body: { item, upload },
     };
   }
 
