@@ -20,7 +20,7 @@ export async function get({ request, platform }) {
 
 export async function post({ request, platform }) {
   let { name, phone, address, preData } = await request.json();
-  preData = preData;
+  preData = JSON.parse(preData);
   preData.push({ name: name, phone: phone, address: address });
   preData = JSON.stringify(preData);
   let item = await platform.env.KVNamespace.put("one", preData);
